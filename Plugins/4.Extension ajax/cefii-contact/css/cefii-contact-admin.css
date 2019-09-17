@@ -1,0 +1,22 @@
+
+table,td,th{
+    border:1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+}
+
+td,th {
+    width: 200px;
+}
+
+tr:nth-child(odd){
+    background: #ccc;
+}
+
+.supprimer {
+    cursor:pointer;
+}
+

@@ -1,0 +1,349 @@
+/*
+Theme name: Kerdtheme
+Author: Kerdou
+Author URI: http://www.cefii.fr
+Description: Thème pour Wordpress. Colonne de widgets à droite. Contient des modèles de pages et formats d'articles.
+Version: 1.0
+*/
+
+
+body {
+    background-color: #ddd;
+    font-family: Calibri;
+}
+
+#wrapper {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+#retourAccueil {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#divImgUne {
+   height: 200px;
+   overflow: hidden;
+   position: relative; 
+}
+    
+#imgUne {
+   width: 100%;
+   position: absolute;
+   object-fit: fill;
+   transform: translateY(-50%) 
+}
+
+a {
+    color: black;
+}
+
+header {
+    text-align: center;
+}
+
+nav {
+    text-align: right;
+}
+
+nav .fa-bars {
+    cursor: pointer;
+    margin-right: 1em;
+    font-size: 1.5em;
+}
+
+nav li {
+    border-top: 1px solid gray;
+}
+
+nav a {
+    color: white;
+    display: block;
+    padding: 0.5em;
+    text-decoration: none;
+}
+
+nav ul {
+    background-color: #767676;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav div > ul {
+    position: relative;
+    /*display: flex;*/
+    display: none;
+    flex-direction: column;
+}
+
+
+nav div ul ul {
+    display: none;
+    position: absolute;
+}
+
+nav div ul ul li {
+    border-left: none;
+    border-top: 1px solid white;
+}
+
+nav div ul li:hover ul {
+    display: block;
+}
+
+#slideshow {
+    min-height : 200px;
+    border: 1px solid black;
+    margin-bottom: 1em;
+    display: none;
+    overflow: hidden;
+}
+main {
+    /*! width:90%; */
+    /*margin:0 auto;*/
+}
+main article {
+    text-align: center;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    min-height: 350px;
+}
+
+#articlesList_space {
+    height: 1em;
+}
+
+.format-standard .une {
+    width:200px;
+    height:200px;
+    margin: 0 auto;
+    white-space: nowrap;
+    border-radius: 50%; 
+    overflow: hidden;
+}
+
+.uneHelper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.format-standard .une img {
+    object-fit: fill;       
+    vertical-align: middle;
+    transform: scale(1.5, 1.5)
+}
+
+.format-quote h2 {
+    font-size: 2em;
+}
+
+.format-quote p {
+    text-align: justify;
+    margin-top: 3em;
+}
+
+.format-quote .infos {
+    text-align: center;
+}
+
+.contentArticle {
+    text-align: justify;
+}
+
+.lienSuite {
+    text-align: right;
+}
+
+.format-quote i {
+    float: left;
+    font-size: 3em;
+}
+.precSuiv {
+    overflow: hidden;
+}
+.articlePrec {
+    float: left;
+}
+.articleSuiv {
+    float: right;
+}
+.avecAside {
+    float: left;
+    width: 70%;
+    padding-left: 10px;
+}
+#colonneDroite {
+    width: 25%;
+    float: right;
+}
+footer {
+    background-color: #767676;
+    margin-top: 2em;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+footer a {
+    color: #fff;
+}
+
+.clear {
+    width: 0;
+    height: 0;
+    float: none;
+    clear: both;
+}
+
+#menuFooter ul {
+    list-style: none;
+    padding: 0;
+}
+
+#contact {
+    margin: 0 5%;
+}
+
+#contact a {
+    text-decoration: none;
+}
+iframe {
+    width: 100%;
+}
+#copyright {
+    clear: both;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+#social a {
+    display: inline-block;
+    width: 30%;
+    margin-bottom: 0.5em;
+    font-size: 2em;
+}
+
+#social a:hover {
+    text-shadow: 0 0 5px white;
+}
+
+
+@media screen and (min-width:780px) {
+     
+    #titre,
+    #logo,
+    #slogan {
+        display: inline-block;
+        vertical-align: middle;
+        width: 33.333%;
+        margin-right:-0.25em;
+    }
+    
+    #menuFooter,
+    #contact,
+    #social {
+        float: left;
+        width: 30%;
+    }
+ 
+    
+    
+    #slideshow {
+        display: block;
+    }
+    nav .fa-bars {
+        display: none;
+    }
+    nav div > ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    nav div > ul > li {
+        flex: 1;
+        max-width: 150px;
+        position: relative;
+    }
+
+    nav div ul ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        z-index: 999;
+    }    
+
+    nav div ul li:hover ul {
+        display: flex;
+    }      
+        
+    
+    nav li +li {
+        border-left: 1px solid white;
+    }
+
+    
+/* page.php */
+    /* image à la une */
+
+    /*****************/
+    
+    #articlesList {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: space-between;
+    }
+    
+    #articlesList article {
+        width: 30%;
+    }
+ 
+/* page contacts */    
+    
+    #model_contact_title {
+        margin-left: 2.7em;
+    }
+    
+    #model_contact {
+      display: flex;       
+      justify-content: space-around;
+    }
+    
+    .wpcf7 {
+      display: inline-block;
+      float: left;
+      width: 50%;
+    }
+
+    #contact {
+      display: inline-block;
+      float: right;
+      width: 20%;
+    }    
+
+/* footer */    
+    #footer_top {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #footer_contact {
+        display: inline-block;
+        float: right;
+        width: 150px;
+    }
+    
+    
+    
+}

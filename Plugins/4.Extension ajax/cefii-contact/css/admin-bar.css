@@ -1,0 +1,5 @@
+/* icône de téléphone dans la toolbar du menu admin */
+#wpadminbar #wp-admin-bar-cefii-contact .ab-icon:before {
+    content: '\f525';
+    top: 3px;
+}

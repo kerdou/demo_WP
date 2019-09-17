@@ -1,0 +1,73 @@
+
+/* onglets au dessus du formulaire*/
+#menuMap ul li {
+    display:inline-block;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #999;
+    padding: 10px;
+    background-color: #ccc;
+}
+
+#menuMap ul li a {
+    color:white;
+    text-decoration: none;
+    display: block;
+}
+
+#menuMap ul li a:hover {
+    color:#999;
+}
+
+#menuMap ul li#active {
+    background: white;
+}
+
+#menuMap ul li#active a,
+#menuMap ul li#active a:hover {
+    color: #999;
+    font-weight: bold;
+    cursor: default;
+}
+/************/
+
+/* message d'erreur du formulaire */
+.errorCefiiMap{
+    color:red;
+    display: none;
+}
+
+.erreur{
+    color:red;
+}
+
+.succes{
+    color:green;
+    font-weight:bold;
+}
+/************/
+
+/* message de confirm de suppression */
+.deleteSucces {
+    color:orange;
+    font-weight:bold;
+}
+
+
+/* positionnement du formulaire dans template-map.php */
+.left {
+    float: left;
+    margin: 10px;
+}
+
+/* dimensions de la map dans template-map.php */
+#map {
+    width: 400px;
+    height: 400px;
+}
+
+/* clear pour aprés la map dans  template-map.php */
+.clear{
+    float:none;
+    clear: both;
+}
+
