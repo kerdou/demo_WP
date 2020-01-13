@@ -18,5 +18,12 @@ jQuery(document).ready(function(){
             jQuery("#menu-menu-principal-horizontal").css("display", "none");
         }     
     });
+});
 
+var menuMainElements = document.querySelectorAll('#menu-menu-principal-horizontal li');
+
+menuMainElements.forEach(item => {
+    if (item.childElementCount > 1) {
+        item.firstElementChild.insertAdjacentHTML('beforeend', '&nbsp;<i class="fa fa-caret-down"></i>');
+    }
 });

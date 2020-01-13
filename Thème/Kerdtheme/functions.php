@@ -14,13 +14,25 @@ add_theme_support('custom-background',array(
     'default-color' => 'cccccc'
 ));
 
+
+// Async load for JS files
+function ikreativ_async_scripts($url) {
+    if ( strpos( $url, '#asyncload') === false )
+        return $url;
+    else if ( is_admin() )
+        return str_replace( '#asyncload', '', $url );
+    else
+	return str_replace( '#asyncload', '', $url )."' async='async"; 
+}
+add_filter( 'clean_url', 'ikreativ_async_scripts', 11, 1 );
+
 /* fichiers à charger */
 function themeExercice_files(){
     wp_enqueue_style('themeExercice-style',get_stylesheet_uri());
     wp_enqueue_style('fontAwesome-style',get_template_directory_uri().'/css/font-awesome.min.css');
     wp_enqueue_style('slider-style',get_template_directory_uri().'/css/jquery.bxslider.css');    
-    wp_enqueue_script('slider-script',get_template_directory_uri().'/js/jquery.bxslider.min.js',array('jquery'));
-    wp_enqueue_script('js-script',get_template_directory_uri().'/js/script.js',array('jquery'));
+    wp_enqueue_script('slider-script',get_template_directory_uri().'/js/jquery.bxslider.min.js', array('jquery'));
+    wp_enqueue_script('js-script',get_template_directory_uri().'/js/script.js#asyncload', array('jquery')); // ajout d'un #asyncload derriere le nom de fichier pour lancer la fonction ikreativ_async_scripts et charger le fichier en async 
 }
 add_action('wp_enqueue_scripts','themeExercice_files');
 
